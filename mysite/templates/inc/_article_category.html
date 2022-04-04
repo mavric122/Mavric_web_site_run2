@@ -1,0 +1,23 @@
+<!-- Блок с списком статей -->
+
+
+<div class="container mt-3">
+    {% for item in article %}</p>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+            </div>
+            <div class="card-body">
+                <h6 class="card-title text-muted ">Категория: <a
+                        href="{% url 'category' item.pk %}"></a>{{item.category}}</h6>
+                <h2 class="card-title text-primary ">{{item.title}}</h2>
+                <h5 class="card-title">{{item.content|truncatechars_html:115}}</h5>
+                <h6 class="card-title"> Статья добавлена: {{ item.created_at }}</h6>
+                <a href="#" class="btn btn-primary">Читать статью</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Конец блока с списком статей -->

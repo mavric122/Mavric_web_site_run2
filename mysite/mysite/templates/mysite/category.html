@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Mavric122 :: {{ category }}
+{% endblock %}
+
+<body>
+    <div class="col-md-12">
+
+        {% block header %}
+        {% include 'inc/_header.html' %}
+        {% endblock %}
+
+        {% block article.category %}
+        {% include 'inc/_article_category.html' %}
+        {% endblock %}
+
+        {% block number %}
+        {% include 'inc/_number.html' %}
+        {% endblock %}
+
+        {% block footer %}
+        {% include 'inc/_footer.html' %}
+        {% endblock %}
+    </div>

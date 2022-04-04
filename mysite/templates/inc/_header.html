@@ -1,0 +1,26 @@
+<!-- шапка сайта, верхний тулбар -->
+{% load articles_tags %}
+<div class="container mt-3">
+    <div class="alert alert-primary col-md-12 mx-auto" role="banner">
+        <h2 style="text-align: center;">База знаний - Mavric122</h2>
+    </div>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="{% url 'home' %}">Главная страница</a>
+        </li>
+        <li class="nav-item">
+            {% get_list_categories as categories %}
+            {% for item in categories %}
+            <a class="nav-link" href="{% url 'category' item.pk %}">{{ item.title }}</a>
+        </li>
+        {% endfor %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'add_article' %}">Добавить статью</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">О сайте</a>
+        </li>
+    </ul>
+
+</div>
+<!-- конец шапки сайта -->

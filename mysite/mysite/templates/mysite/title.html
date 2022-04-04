@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Mavric122 :: База знаний
+{% endblock %}
+
+<body>
+    <div class="col-md-12">
+
+        {% block header %}
+        {% include 'inc/_header.html' %}
+        {% endblock %}
+
+        {% block article %}
+        {% include 'inc/_article.html' %}
+        {% endblock %}
+
+        {% block number %}
+        {% include 'inc/_number.html' %}
+        {% endblock %}
+
+        {% block footer %}
+        {% include 'inc/_footer.html' %}
+        {% endblock %}
+    </div>

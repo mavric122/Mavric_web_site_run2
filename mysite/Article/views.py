@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import Article, Category
 from .forms import ArticleForm
@@ -25,6 +25,7 @@ def get_category(request, category_id):
                }
     return render(request, 'mysite/category.html', context)
 
+
 # Страница с выбранной категорией
 def view_article(request, article_id):
     # article_item = Article.objects.get(pk=article_id)
@@ -33,10 +34,14 @@ def view_article(request, article_id):
                }
     return render(request, 'mysite/view_article.html', content)
 
+
 # Добавить статью
 def add_article(request):
     if request.method == 'POST':
-        pass
+        form = ArticleForm(request.POST)
+        if form.is_valid():
+            article = Article.objects.create(**form.cleaned_data)
+            return redirect(article)
     else:
         form = ArticleForm()
     return render(request, 'mysite/add_article.html', {'form': form})

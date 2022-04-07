@@ -40,7 +40,6 @@
                 <h2 class="card-title text-secondary  ">Решение: </h2><h5 class="card-title">{{ article_item.solution }}</h5>
                 {% endif %}
                 <h6 class="card-title"> Статья добавлена: {{ article_item.created_at }}</h6>
-                <a href="{{ item.get_absolute_url }}" class="btn btn-primary">Читать статью</a>
             </div>
         </div>
     </div>
@@ -51,9 +50,6 @@
 <!-- Конец блока с списком статей -->
 
 
-        {% block number %}
-        {% include 'inc/_number.html' %}
-        {% endblock %}
 
         {% block footer %}
         {% include 'inc/_footer.html' %}

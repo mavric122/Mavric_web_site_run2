@@ -51,6 +51,22 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="{{ form.examples.id_for_label }}" class="form-label">Примеры:</label>
+                    {{ form.examples }}
+                    <div class="invalid-feedback">
+                        {{ form.examples.errors }}
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="{{ form.solution.id_for_label }}" class="form-label">Решение:</label>
+                    {{ form.solution }}
+                    <div class="invalid-feedback">
+                        {{ form.solution.errors }}
+                    </div>
+                </div>
+
+                <div class="mb-3">
                     <label for="{{ form.is_published.id_for_label }}" class="form-label">Опубликовать?</label>
                     {{ form.is_published }}
                     <div class="invalid-feedback">
@@ -76,9 +92,7 @@
         <!-- Конец блока с формой -->
 
 
-        {% block number %}
-        {% include 'inc/_number.html' %}
-        {% endblock %}
+
 
         {% block footer %}
         {% include 'inc/_footer.html' %}

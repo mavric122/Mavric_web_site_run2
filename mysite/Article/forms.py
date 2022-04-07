@@ -12,6 +12,14 @@ class ArticleForm(forms.Form):
                                 'class': 'form-control',
                                 'rows': 10
                             }))
+    examples = forms.CharField(label='Примеры', widget=forms.Textarea(attrs={
+                                'class': 'form-control',
+                                'rows': 10
+                            }))
+    solution = forms.CharField(label='Решение', widget=forms.Textarea(attrs={
+                                'class': 'form-control',
+                                'rows': 10
+                            }))
     is_published = forms.BooleanField(label='Опубликовано?')
     category = forms.ModelChoiceField(empty_label='Выберите категорию',label='Категория',
                                       queryset=Category.objects.all(), widget=forms.Select(attrs={
